@@ -16,3 +16,12 @@ Supongamos que del centro circular de biomaterial salen hacia afuera 5 hilos de 
 Expansión: memoria de la obra - El sistema almacena las distintas variaciones de interacción que fue teniendo con el público y las guarda como patrones de iluminación. Cuando la obra queda en estado de apagón por determinada cantidad de minutos la obra comienza a recordar y a pasar cada una de las iteraciones desde x cantidad de horas. 
 
 La obra aborda dos temas de estudio abordados en el temario. Por un lado los condicionales y por el otro las iteraciones.
+
+
+ESP32_Touch_LED
+
+📌 ¿Qué hace el programa?
+Lee un sensor táctil (touchRead).
+Si el valor detectado es menor al umbral (30), enciende el LED.
+Si no, lo apaga.
+Imprime el valor leído en el Monitor Serial.
