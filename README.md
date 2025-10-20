@@ -18,10 +18,20 @@ Expansión: memoria de la obra - El sistema almacena las distintas variaciones d
 La obra aborda dos temas de estudio abordados en el temario. Por un lado los condicionales y por el otro las iteraciones.
 
 
-ESP32_Touch_LED
+# ESP32_Touch_LED
 
-📌 ¿Qué hace el programa?
-Lee un sensor táctil (touchRead).
-Si el valor detectado es menor al umbral (30), enciende el LED.
-Si no, lo apaga.
-Imprime el valor leído en el Monitor Serial.
+¿Qué hace el programa?
+- Lee un sensor táctil (touchRead).
+- Si el valor detectado es menor al umbral (30), enciende el LED.
+- Si no, lo apaga.
+- Imprime el valor leído en el Monitor Serial.
+
+
+# ESP32_Touch_LED_Memoria
+
+Cómo funciona
+- Durante el contacto: el LED sube gradualmente hasta 255.
+- Al soltar: baja gradualmente hasta 0.
+- Archivado: mientras hay contacto, se muestrea el brillo cada 50 ms y se guarda como un “patrón”. Se guardan hasta 8 patrones, cada uno con hasta 800 muestras (≈40 s). Si se llena, el más antiguo se sobrescribe.
+- Reproducción: si el LED estuvo apagado (brillo 0) por 1 minuto, comienza a reproducir los patrones guardados en bucle. Cada patrón termina con un fade out automático a 0.
+- Interrupción: cualquier contacto corta de inmediato la reproducción y vuelve al control manual.
